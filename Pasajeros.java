@@ -1,4 +1,4 @@
-package ej1;
+package ej53;
 
 public class Pasajeros {
 	protected String nombre;
@@ -6,12 +6,14 @@ public class Pasajeros {
 	protected int numPasaporte;
 	public enum ESTADO{EMBARCADO, PENDIENTE};
 	public ESTADO estado;
+	protected static int contadorPasajeros = 0;
 	
 	public Pasajeros(String nombre, String direccion, int numPasaporte, ESTADO estado) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.numPasaporte = numPasaporte;
 		this.estado = estado;
+		contadorPasajeros++;
 	}
 	
 	public static void embarcar() {
@@ -25,6 +27,10 @@ public class Pasajeros {
 	public static void andar() {
 		System.out.println("El pasajero esta andando");
 	}
+	
+	public static int getContadorPasajeros() {
+        return contadorPasajeros;
+    }
 
 	@Override
 	public String toString() {
@@ -54,7 +60,5 @@ public class Pasajeros {
 
 	public int getNumPasaporte() {
 		return numPasaporte;
-	}
-	
-	
+	}	
 }

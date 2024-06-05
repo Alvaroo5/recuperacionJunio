@@ -1,17 +1,19 @@
-package ej1;
+package ej53;
 
 public class Avion {
 	protected String aerolinea;
 	protected double longitud;
 	protected String modelo;
-	public enum MODELOVUELO{MANUAL, CRUCERO, PILOTO_AUTOMATICO}
+	public enum MODELOVUELO{MANUAL, CRUCERO, PILOTO_AUTOMATICO};
 	public MODELOVUELO modeloVuelo;
+	protected static int contadorAviones = 0;
 	
 	public Avion(String aerolinea, double longitud, String modelo, MODELOVUELO modeloVuelo) {
 		this.aerolinea = aerolinea;
 		this.longitud = longitud;
 		this.modelo = modelo;
 		this.modeloVuelo = modeloVuelo;
+		contadorAviones++;
 	}
 	
 	public static void despegar() {
@@ -26,6 +28,10 @@ public class Avion {
 		System.out.println("El avion se encuentra en pleno vuelo");
 	}
 
+	public static int getContadorAviones() {
+        return contadorAviones;
+    }
+	
 	@Override
 	public String toString() {
 		return "Avion [aerolinea=" + aerolinea + ", longitud=" + longitud + ", modelo=" + modelo + ", modeloVuelo="
@@ -52,6 +58,4 @@ public class Avion {
 	public void setModeloVuelo(MODELOVUELO modeloVuelo) {
 		this.modeloVuelo = modeloVuelo;
 	}
-	
-	
 }
